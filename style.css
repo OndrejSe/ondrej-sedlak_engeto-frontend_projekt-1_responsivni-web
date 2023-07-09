@@ -1,0 +1,617 @@
+:root {
+    --text-black: #000000;
+    --text-white: #ffffff;
+    --background-dark-brown: #33292A;
+    --background-light-brown: #644b4f;
+    --background-dark-grey: #333333;
+    --background-light-grey: #f2f2f2;
+    --link: #efa69d;
+    --link-hover: #e9877b;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+h2 {
+    font-size: 2rem;
+}
+p {
+    font-size: 1rem;
+}
+h3 {
+    font-size: 1.5rem;
+}
+
+/* 1 - HEADER (NAVBAR) */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    height: 8vh;
+    justify-content: right;
+    align-items: end;
+    background-color: var(--background-dark-brown);
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transform: translateX(-100%);
+    gap: 2vh;
+    width: 100%;
+    margin: 0;
+    padding: 2vh 0;
+    color: var(--text-white);
+    background: rgba(51, 41, 42, 0.75);
+}
+
+.nav-item {
+    list-style: none;
+    background-color: none;
+    margin: 0;
+}
+
+.nav-link {
+    color: var(--white-text);
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.nav-link:hover {
+    color: var(--link-hover);
+    cursor: pointer;
+}   
+
+.bar {
+    display: block;
+    width: 5vh;
+    height: 0.5vh;
+    margin: 1vh 0;
+    border-radius: 0.25rem;
+    background-color: var(--text-white);
+}
+
+.checkbox {
+    position: absolute;
+    margin-right: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    opacity: 0;
+}
+
+.nav-bar .checkbox:checked ~ .nav-menu {
+    transform: translateX(0%);
+    transition: 0.3s ease;
+}
+
+.nav-bar .checkbox:checked ~ .hamburger-icon .bar:nth-child(1) {
+    transform: translateY(0.75rem) rotate(45deg);
+  }
+
+.nav-bar .checkbox:checked ~ .hamburger-icon .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-bar .checkbox:checked ~ .hamburger-icon .bar:nth-child(3) {
+    transform: translateY(-0.75rem) rotate(-45deg);
+}
+
+.hamburger-icon {
+    padding: 1.25vh 7.5vw;
+}
+
+
+/* 2 - HERO SECTION */
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 2.5rem;
+}
+
+.hero-section {
+    margin-top: 8vh;
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 8vh);
+    justify-content: center;
+    align-items: end;
+    background-image: url(./images/scott-goodwill-y8Ngwq34_Ak-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    }
+
+.main-title {
+    color: var(--text-white);
+    text-align: right;
+    width: 85vw;
+    margin: 6vh 0;
+}
+
+/* 3 - ABOUT US */
+
+h2{
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+#about-us-section {
+    display: flex;
+    justify-content: center;
+    padding: 8vh 0;
+    color: var(--text-black);
+}
+
+.about-us-container {
+    width: 85vw;
+}
+
+.about-us-text {
+    margin: 0 0 2rem 0;
+}
+
+.about-us-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-us-text p {
+    font-size: 1rem;
+}
+
+
+.about-us-container img {
+    width:100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* 4 - WHAT WE DO */
+
+#what-we-do-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-dark-brown);
+    color: var(--text-white);
+    padding: 8vh 0;
+}
+
+.what-we-do-text {
+    text-align: center;
+    width: 85vw;
+    margin-bottom: 3rem;    
+}
+
+.what-we-do-text h2 {
+    margin-bottom: 1rem;
+}
+
+.icon-and-text-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 8rem;
+    letter-spacing: 0.5px;
+}
+
+.icons h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.surfing h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.icon {
+    width: 5rem;
+    height: 5rem;
+    fill: var(--text-white);
+    object-fit: cover;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* 5 - OUR TRIPS */
+
+#our-trips-section {
+    display: flex;
+    justify-content: center;
+    padding: 8vh 0;
+}
+
+.trips-gallery{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 85vw;
+}
+.trip-photo{
+    flex-basis: 26vh; 
+    height: 26vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.trip-photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.trips-caption{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    background-color: var(--background-light-grey);
+    border-radius: 5px;
+}
+
+.trips-caption h2 {
+    font-size: 1.5rem;
+}
+
+/* 6 - WHERE DO YOU WANT TO GO */
+
+#where-section {
+    display: flex;
+    justify-content: center;
+    padding: 8vh 0;
+    background-color: var(--background-light-brown);
+}
+
+.where-container {
+    color: var(--text-white);
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 85vw;
+}
+
+.where-text-and-button {
+    color: var(--white-text);
+    padding-bottom: 1rem;
+}
+
+.where-text-and-button p {
+    padding-bottom: 4rem;
+}
+
+.where-text-and-button a {
+    text-decoration: none;
+    color: var(--text-black);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1rem;
+    background-color: var(--background-light-grey);
+    border-radius: 5px;
+}
+
+/* 7 - REVIEWS */
+
+#reviews-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8vh 0;
+    color: var(--text-black);
+}
+
+.reviews-header h2{
+    margin-bottom: 2rem;
+}
+
+.reviews-header {
+    margin-bottom: 4rem;
+    text-align: center;
+    width: 85vw;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 85vw;
+}
+
+.review {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.review-photo {
+   height: 6rem;
+   width: 6rem;
+}
+
+.review-photo img{
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.review-name {
+    font-weight: 700;
+}
+
+/* 8 - END GALLERY */
+
+#end-gallery-section {
+    display: flex;
+    flex-direction: column;
+}
+
+#end-gallery-section img {
+    width: 100%;
+    height: 32vh;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+}
+
+    /* 9 - FOOTER */
+
+    #footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        height: 12vh;
+        background-color: var(--background-dark-grey);
+    }
+
+    #footer a {
+        color: var(--link);
+        font-weight: 700;
+        font-size: 0.75rem;
+    }
+
+    #footer a:hover {
+        color: var(--link-hover);
+    }
+
+    #footer p {
+        font-size: 0.625rem;
+        color: var(--text-white);
+        font-weight: 700;
+    }
+
+
+@media only screen and (min-width: 768px) {
+    
+    /* 1 - HEADER (NAVBAR) */
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        transform: translateX(0);
+        width: 60vw;
+    }
+    .nav-bar {
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .nav-item {
+        text-align: center;
+    }
+
+    .hamburger-icon {
+        display: none;
+    }
+
+    /* 2 - HERO SECTION */
+
+    h1 {
+        font-size: 6rem;
+    }
+
+    .hero-section {
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-title {
+        line-height: 1.15;
+        width: 60vw;
+        margin-bottom: 8vh;
+    }
+
+    /* 3 - ABOUT US */
+
+    #about-us-section {
+        padding: 12vh 0;
+    }
+
+    .about-us-container {
+        display: flex;
+        width: 60vw;
+    }
+
+    .about-us-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        width: 50%;
+        }
+
+    .about-us-text h2 {
+        margin: 0 0 1rem 0;
+    }
+
+    .about-us-text p {
+        margin-right: 4rem;
+    }
+
+    .about-us-container img {
+        flex: 1;
+        margin-left: 0;
+        object-fit: cover;
+        object-position: center;
+        width:50%;
+    }
+
+    /* 4 - WHAT WE DO */
+
+    #what-we-do-section {
+        padding: 12vh 0;
+    }
+
+    .what-we-do-text {
+        width: 60vw;
+        margin-bottom: 8rem;
+    }
+
+    .icons {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 60vw;
+    }
+
+    .icons h3 {
+        font-size: 1.5rem;
+    }
+
+    /* 5 - OUR TRIPS */
+
+    #our-trips-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 12vh 0;
+    }
+
+    .trips-gallery {
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 1rem;
+        width: 60vw;
+    }
+
+    .trip-photo{
+        flex-basis: 15vw;
+        height: 15vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 1;
+        flex-grow: 1;
+    }
+
+    .trips-caption{
+        flex-basis: 15vw;
+        height: 15vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 1;
+        flex-grow: 1;
+    }
+
+    .trips-caption h2 {
+        font-size: 2rem;
+    }
+
+    .trip-photo img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* 6 - WHERE DO YOU WANT TO GO */
+
+    #where-section {
+        display: flex;
+        justify-content: center;
+        padding: 12vh 0;
+    }
+
+    .where-container {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2vw;
+        width: 60vw;
+    }
+
+    .where-heading {
+    width: 18vw
+    }
+    .where-text-and-button {
+        margin: 0;
+        flex-grow: 2;
+        flex-shrink: 2;
+        flex-basis: 0;
+    }
+
+    /* 7 - REVIEWS */
+    
+    #reviews-section {
+        padding: 12vh 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reviews-header {
+        width: 23vw;
+    }
+
+    .reviews {
+        flex-direction: row;
+        width: 55vw;
+        gap: 6rem;
+    }
+
+    /* 8 - END GALLERY */
+
+    #end-gallery-section {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    #end-gallery-section img {
+        width: 50%;
+        height: 49vh;
+    }
+}
